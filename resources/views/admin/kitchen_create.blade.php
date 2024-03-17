@@ -27,7 +27,7 @@
         </div>
     <div class="form-group">
       <label for="exampleInputPassword1">Name</label>
-      <input name="name" value="{{ isset($kitchen) && $kitchen->name ?? '' }}" type="text" class="form-control" id="name">
+      <input name="name" value="{{ isset($kitchen) ? $kitchen->name : '' }}" type="text" class="form-control" id="name">
     </div>
     <div class="form-group form-check">
       <input name="status" type="checkbox" class="form-check-input" value="1" {{ isset($kitchen) && $kitchen->status ? 'checked' : '' }}  id="status">
