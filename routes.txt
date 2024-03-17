@@ -1,0 +1,22 @@
++--------+-----------+------------------------+-----------------+------------------------------------------------------------+------------------------------------------+
+| Domain | Method    | URI                    | Name            | Action                                                     | Middleware                               |
++--------+-----------+------------------------+-----------------+------------------------------------------------------------+------------------------------------------+
+|        | GET|HEAD  | /                      | home            | Illuminate\Routing\ViewController                          | web                                      |
+|        | GET|HEAD  | about                  | about           | Illuminate\Routing\ViewController                          | web                                      |
+|        | GET|HEAD  | api/user               |                 | Closure                                                    | api                                      |
+|        |           |                        |                 |                                                            | App\Http\Middleware\Authenticate:sanctum |
+|        | GET|HEAD  | contact                | contact         | Illuminate\Routing\ViewController                          | web                                      |
+|        | GET|HEAD  | dashboard              | dashboard       | App\Http\Controllers\AdminController@dashboard             | web                                      |
+|        | GET|HEAD  | kitchen                | kitchen.index   | App\Http\Controllers\KitchenController@index               | web                                      |
+|        | POST      | kitchen                | kitchen.store   | App\Http\Controllers\KitchenController@store               | web                                      |
+|        | GET|HEAD  | kitchen/create         | kitchen.create  | App\Http\Controllers\KitchenController@create              | web                                      |
+|        | GET|HEAD  | kitchen/{kitchen}      | kitchen.show    | App\Http\Controllers\KitchenController@show                | web                                      |
+|        | PUT|PATCH | kitchen/{kitchen}      | kitchen.update  | App\Http\Controllers\KitchenController@update              | web                                      |
+|        | DELETE    | kitchen/{kitchen}      | kitchen.destroy | App\Http\Controllers\KitchenController@destroy             | web                                      |
+|        | GET|HEAD  | kitchen/{kitchen}/edit | kitchen.edit    | App\Http\Controllers\KitchenController@edit                | web                                      |
+|        | GET|HEAD  | login                  | login           | Illuminate\Routing\ViewController                          | web                                      |
+|        | POST      | login                  | auth.login      | App\Http\Controllers\AdminController@login                 | web                                      |
+|        | GET|HEAD  | menu                   | menu            | Illuminate\Routing\ViewController                          | web                                      |
+|        | GET|HEAD  | password-generator     |                 | Closure                                                    | web                                      |
+|        | GET|HEAD  | sanctum/csrf-cookie    |                 | Laravel\Sanctum\Http\Controllers\CsrfCookieController@show | web                                      |
++--------+-----------+------------------------+-----------------+------------------------------------------------------------+------------------------------------------+

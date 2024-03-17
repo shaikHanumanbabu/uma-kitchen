@@ -26,40 +26,61 @@
       <h2 style="color: #014422;">How can we help you</h2>
       <p>Please give as much detail as possible so we can route your question properly.</p>
     </div>
-    <div class="row">
-      <div class="col-md-11" style="padding:0;">
-        <div class="col-sm-6 col-md-6 black"> <span class="input input--nariko">
-          <input class="input__field input__field--nariko" type="text" id="input-20" style="background-color:transparent;" />
-          <label class="input__label input__label--nariko" for="input-20"> <span class="input__label-content input__label-content--nariko">First name</span> </label>
-          </span> </div>
-        <!--Last name-->
-        <div class="col-sm-6 col-md-6 black"> <span class="input input--nariko">
-          <input class="input__field input__field--nariko" type="text" id="input-20" style="background-color:transparent;" />
-          <label class="input__label input__label--nariko" for="input-20"> <span class="input__label-content input__label-content--nariko">Last name</span> </label>
-          </span> </div>
-        <div class="clearfix"></div>
-        <!--Phone Number-->
-        <div class="col-sm-6 col-md-6 black"> <span class="input input--nariko">
-          <input class="input__field input__field--nariko" type="text" id="input-20" style="background-color:transparent;" />
-          <label class="input__label input__label--nariko" for="input-20"> <span class="input__label-content input__label-content--nariko">Phone Number</span> </label>
-          </span> </div>
-        <!--Email Address-->
-        <div class="col-sm-6 col-md-6 black"> <span class="input input--nariko">
-          <input class="input__field input__field--nariko" type="text" id="input-20" style="background-color:transparent;" />
-          <label class="input__label input__label--nariko" for="input-20"> <span class="input__label-content input__label-content--nariko">Email Address</span> </label>
-          </span> </div>
-        <div class="clearfix"></div>
-        <!--Message-->
-        <div class="col-md-12 message"> <span class="input input--nariko black">
-          <textarea class="input__field input__field--nariko textarea" type="text" id="input-20" style="background-color:transparent;"></textarea>
-          <label class="input__label input__label--nariko" for="input-20"> <span class="input__label-content input__label-content--nariko" style="color:#191919;">Message</span> </label>
-          </span> </div>
-        <div class="clearfix"></div>
-        <div class="col-md-12 text-right"> <a href="#" class="menu-all-btn-wht btn-bg">SUBMIT</a> </div>
-        <div class="clearfix"></div>
-      </div>
-      <div class="col-md-1"></div>
+
+
+
+    @if (session()->has('success'))
+    <div class="alert alert-success">
+        {{ session( 'success' ) }}
     </div>
+    @endif
+
+    @if ($errors->any())
+      <div class="alert alert-danger">
+          @foreach ($errors->all() as $error)
+              <a href="#" class="alert-link">{{$error}}</a><br>
+          @endforeach
+      </div>
+  @endif
+    <form action="{{ route('store_contact') }}" method="post">
+      @csrf
+      <div class="row">
+        <div class="col-md-11" style="padding:0;">
+          <div class="col-sm-6 col-md-6 black"> <span class="input input--nariko">
+            <input name="firstname" class="input__field input__field--nariko" type="text" id="input-20" style="background-color:transparent;" />
+            <label class="input__label input__label--nariko" for="input-20"> <span class="input__label-content input__label-content--nariko">First name</span> </label>
+            </span> </div>
+          <!--Last name-->
+          <div class="col-sm-6 col-md-6 black"> <span class="input input--nariko">
+            <input name="lastname" class="input__field input__field--nariko" type="text" id="input-20" style="background-color:transparent;" />
+            <label class="input__label input__label--nariko" for="input-20"> <span class="input__label-content input__label-content--nariko">Last name</span> </label>
+            </span> </div>
+          <div class="clearfix"></div>
+          <!--Phone Number-->
+          <div class="col-sm-6 col-md-6 black"> <span class="input input--nariko">
+            <input name="phone" class="input__field input__field--nariko" type="text" id="input-20" style="background-color:transparent;" />
+            <label class="input__label input__label--nariko" for="input-20"> <span class="input__label-content input__label-content--nariko">Phone Number</span> </label>
+            </span> </div>
+          <!--Email Address-->
+          <div class="col-sm-6 col-md-6 black"> <span class="input input--nariko">
+            <input name="email" class="input__field input__field--nariko" type="text" id="input-20" style="background-color:transparent;" />
+            <label class="input__label input__label--nariko" for="input-20"> <span class="input__label-content input__label-content--nariko">Email Address</span> </label>
+            </span> </div>
+          <div class="clearfix"></div>
+          <!--Message-->
+          <div class="col-md-12 message"> <span class="input input--nariko black">
+            <textarea name="message" class="input__field input__field--nariko textarea" type="text" id="input-20" style="background-color:transparent;"></textarea>
+            <label class="input__label input__label--nariko" for="input-20"> <span class="input__label-content input__label-content--nariko" style="color:#191919;">Message</span> </label>
+            </span> </div>
+          <div class="clearfix"></div>
+          <div class="col-md-12 text-right"> <button type="submit" class="menu-all-btn-wht btn-bg">SUBMIT</button> </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+
+
+    </form>
   </div>
   <div class="col-md-4">
     <div class="row margin-top">
