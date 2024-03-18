@@ -128,7 +128,7 @@ class AdminController extends Controller
             'message' => 'required',
         ]);
 
-        Mail::to("hanumanbabu.shaik@yopmail.com")->send( new ContactEmail($validated));
+        Mail::to($validated['email'])->send( new ContactEmail($validated));
 
         Contact::create($validated);
 
@@ -147,6 +147,6 @@ class AdminController extends Controller
     
         $request->session()->regenerateToken();
     
-        return redirect('/logout');
+        return redirect('login');
     }
 }
