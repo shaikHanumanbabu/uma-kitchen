@@ -8,9 +8,9 @@
                             <ul class="menu-logo"> 
                                 <li class="head-info"> 
                                     <a href="{{ route('home') }}"> 
-                                    <!-- <i class="flaticon-dinner"></i>  -->
+                                    <!-- <i class="flaticon-dinner"></i>  public/img/umas_authentic_kitchen.png -->
                                     <!-- <span style="color: #FFF; font-size: 20px; font-weight: bold;">Uma's Authentic Kitchen</span> -->
-                                    <img id="logo_img" src="img/logo1.png" alt="logo">     
+                                    <img id="logo_img" src="img/umas_authentic_kitchen.png" alt="logo">     
                                     </a>
                                 </li>
                             </ul> 
