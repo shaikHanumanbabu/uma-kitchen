@@ -61,7 +61,13 @@ Route::get('/menu', function() {
     ]);
 })->name('menu');
 Route::view('/contact', 'contact')->name('contact');
-Route::view('/login', 'admin.login')->name('login');
+Route::get('/login', function() {
+    $user = request()->user();
+    if($user) {
+        return redirect('/kitchen');
+    }
+    return view('admin.login');
+})->name('login');
 
 Route::get('/contact-information', [AdminController::class, 'contact'])->middleware('auth')->name('contact_info');
 Route::post('/store_contact', [AdminController::class, 'store_contact'])->name('store_contact');

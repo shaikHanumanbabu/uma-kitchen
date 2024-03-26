@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+    <title>Uma's - Login</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -66,24 +66,24 @@
                                             <input name="password" type="password" class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="Password">
                                         </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
-                                            </div>
-                                        </div>
+                                        <!--<div class="form-group">-->
+                                        <!--    <div class="custom-control custom-checkbox small">-->
+                                        <!--        <input type="checkbox" class="custom-control-input" id="customCheck">-->
+                                        <!--        <label class="custom-control-label" for="customCheck">Remember-->
+                                        <!--            Me</label>-->
+                                        <!--    </div>-->
+                                        <!--</div>-->
                                         <button class="btn btn-primary btn-user btn-block">
                                             Login
                                         </button>
-                                        <hr>
+                                        <!--<hr>-->
                                         
                                         
                                     </form>
-                                    <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
-                                    </div>
+                                    <!--<hr>-->
+                                    <!--<div class="text-center">-->
+                                    <!--    <a class="small" href="forgot-password.html">Forgot Password?</a>-->
+                                    <!--</div>-->
                                     
                                 </div>
                             </div>

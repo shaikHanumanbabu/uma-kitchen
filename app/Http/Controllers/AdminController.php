@@ -23,12 +23,13 @@ class AdminController extends Controller
 
     public function login(Request $request)
     {
+       
         $credentials = $request->validate([
             'email' => 'required|email|max:255',
             'password' => 'required|min:6|string'
         ]);
 
-        
+            
         if(Auth::attempt($credentials)) {
             return redirect()->intended('/kitchen');
         }
@@ -128,7 +129,7 @@ class AdminController extends Controller
             'message' => 'required',
         ]);
 
-        Mail::to($validated['email'])->send( new ContactEmail($validated));
+        // Mail::to($validated['email'])->send( new ContactEmail($validated));
 
         Contact::create($validated);
 
