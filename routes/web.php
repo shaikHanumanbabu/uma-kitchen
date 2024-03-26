@@ -67,7 +67,7 @@ Route::get('/contact-information', [AdminController::class, 'contact'])->middlew
 Route::post('/store_contact', [AdminController::class, 'store_contact'])->name('store_contact');
 Route::get('/logout', [AdminController::class, 'logout'])->middleware('auth')->name('logout');
 Route::post('/login', [AdminController::class, 'login'])->name('auth.login');
-Route::get('/dashboard', [AdminController::class, 'dashboard'])->middleware('auth')->name('dashboard');
+// Route::get('/dashboard', [AdminController::class, 'dashboard'])->middleware('auth')->name('dashboard');
 
 Route::resource('/kitchen', KitchenController::class)->middleware('auth');
 

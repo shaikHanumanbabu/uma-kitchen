@@ -30,7 +30,7 @@ class AdminController extends Controller
 
         
         if(Auth::attempt($credentials)) {
-            return redirect()->intended('/dashboard');
+            return redirect()->intended('/kitchen');
         }
 
         return redirect()->back()->with('fail', 'Invalid User/Password');
@@ -139,7 +139,7 @@ class AdminController extends Controller
      /**
      * Log the user out of the application.
      */
-    public function logout(Request $request): RedirectResponse
+    public function logout(Request $request)
     {
         Auth::logout();
     
